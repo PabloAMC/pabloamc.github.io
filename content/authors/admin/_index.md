@@ -51,20 +51,20 @@ education:
 skills:
   - name: Technical
     items:
+      - name: Quantum algorithms
+        description: ''
+        percent: 100
+        icon: atom
+        icon_pack: fas
       - name: Python
         description: ''
         percent: 80
         icon: python
         icon_pack: fab
-      - name: Quantum algorithms
-        description: ''
-        percent: 100
-        icon: chart-line
-        icon_pack: fas
       - name: JAX
         description: ''
         percent: 66
-        icon: database
+        icon: brain
         icon_pack: fas
 
 # Social/Academic Networking
