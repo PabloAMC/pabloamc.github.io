@@ -66,7 +66,7 @@ sections:
           company: Xanadu AI
           company_url: ''
           company_logo: xanadu_logo
-          location: California
+          location: Toronto
           date_start: '2022-09-01'
           date_end: ''
           description: |2-
@@ -74,14 +74,14 @@ sections:
 
               * Research
               * Software engineering
-        - title: Professor of Semiconductor Physics
-          company: University X
+        - title: PhD professor
+          company: Complutense University of Madrid
           company_url: ''
-          company_logo: org-x
-          location: California
-          date_start: '2016-01-01'
-          date_end: '2020-12-31'
-          description: Taught electronic engineering and researched semiconductor physics.
+          company_logo: complutense_logo
+          location: Madrid
+          date_start: '2018-09-01'
+          date_end: '2022-12-31'
+          description: Reseach and teaching assistant.
     design:
       columns: '2'
   - block: collection
