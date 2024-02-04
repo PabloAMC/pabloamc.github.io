@@ -1,6 +1,6 @@
 ---
 title: "An Open Philanthropy grant proposal: Causal representation learning of human preferences"
-date: 2022-01-11 11:28:01 UTC
+date: "2022-01-11 11:28:01 UTC"
 summary: ''
 ---
 
