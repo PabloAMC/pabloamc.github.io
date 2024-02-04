@@ -62,19 +62,18 @@ sections:
       #   Leave `date_end` empty if it's your current employer.
       #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
       items:
-        - title: Researcher
+        - title: Quantum algorithm researcher
           company: Xanadu AI
           company_url: ''
-          company_logo: org-gc
+          company_logo: xanadu_logo
           location: California
-          date_start: '2021-01-01'
+          date_start: '2022-09-01'
           date_end: ''
           description: |2-
               Responsibilities include:
 
-              * Analysing
-              * Modelling
-              * Deploying
+              * Research
+              * Software engineering
         - title: Professor of Semiconductor Physics
           company: University X
           company_url: ''
