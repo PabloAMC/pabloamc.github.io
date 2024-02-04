@@ -20,7 +20,6 @@ image:
   caption: 'Schematic depiction of the [general workflow for machine learning-enhanced density functional theory](/content/publication/casares-2023-graddft/Neural_functional_concept.png)'
   focal_point: ''
   preview_only: false
-  src: '/content/publication/casares-2023-graddft/Neural_functional_concept.png'
 
 url_code: 'https://github.com/XanaduAI/GradDFT'
 
