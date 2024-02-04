@@ -66,7 +66,7 @@ sections:
           company: Xanadu AI
           company_url: ''
           company_logo: xanadu_logo
-          location: Toronto
+          location: ''
           date_start: '2022-09-01'
           date_end: ''
           description: |2-
@@ -74,11 +74,11 @@ sections:
 
               * Research
               * Software engineering
-        - title: PhD professor
+        - title: PhD student
           company: Complutense University of Madrid
           company_url: ''
           company_logo: complutense_logo
-          location: Madrid
+          location: ''
           date_start: '2018-09-01'
           date_end: '2022-12-31'
           description: Reseach and teaching assistant.
