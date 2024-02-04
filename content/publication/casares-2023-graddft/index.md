@@ -14,6 +14,8 @@ publication_types:
 publication: '*arXiv preprint arXiv:2309.15127*'
 featured: true
 
+summary: GradDFT is a JAX-based library enabling the differentiable design and experimentation of exchange-correlation functionals using machine learning techniques.
+
 image:
   caption: 'Schematic depiction of the [general workflow for machine learning-enhanced density functional theory](/content/publication/casares-2023-graddft/Neural_functional_concept.png)'
   focal_point: ''
