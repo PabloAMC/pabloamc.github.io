@@ -13,12 +13,12 @@ publication_types:
 - article-journal
 publication: '*arXiv preprint arXiv:2309.15127*'
 featured: true
-#image: '/content/publication/casares-2023-graddft/Neural_functional_concept.pdf'
+
 image:
-  caption: 'Schematic depiction of the [general workflow for machine learning-enhanced density functional theory](/content/publication/casares-2023-graddft/Neural_functional_concept.pdf)'
+  caption: 'Schematic depiction of the [general workflow for machine learning-enhanced density functional theory](/content/publication/casares-2023-graddft/Neural_functional_concept.png)'
   focal_point: ''
   preview_only: false
-  src: '/content/publication/casares-2023-graddft/Neural_functional_concept.pdf'
+  src: '/content/publication/casares-2023-graddft/Neural_functional_concept.png'
 
 url_code: 'https://github.com/XanaduAI/GradDFT'
 
