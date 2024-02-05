@@ -104,7 +104,7 @@ Hello, I'm Pablo 👋!
 - My Scholar profile: https://scholar.google.com/citations?user=doyD-AwAAAAJ&hl=es
 - My Github profile: https://github.com/PabloAMC
 
-🚀 My biggest achievement is the development of GradDFT ⚛️, a JAX-based library enabling the differentiable design and experimentation of exchange-correlation functionals using machine learning techniques. Check it at https://github.com/XanaduAI/GradDFT
+🚀 My biggest achievement is the development of GradDFT ⚛️, a JAX-based library enabling the differentiable design and experimentation of exchange-correlation functionals using machine learning techniques. Check it at https://github.com/XanaduAI/GradDFT.
 
 🎯 My aim is to use my career to do the most good. One area where I expect to exist significant opportunities is positively shaping the development of Artificial Intelligence 🤖 (https://80000hours.org/problem-profiles/positively-shaping-artificial-intelligence/):
 
