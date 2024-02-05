@@ -14,4 +14,5 @@ doi: 10.22331/q-2022-07-20-768
 links:
 - name: URL
   url: https://doi.org/10.22331/q-2022-07-20-768
+url_pdf: 'https://doi.org/10.22331/q-2022-07-20-768'
 ---

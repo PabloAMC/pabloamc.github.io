@@ -12,4 +12,5 @@ publishDate: '2024-02-04T20:39:57.242500Z'
 publication_types:
 - article-journal
 publication: '*Proceedings of the 36th AAAI Conference on Artificial Intelligence*'
+url_pdf: 'https://ojs.aaai.org/index.php/AAAI/article/view/20466'
 ---

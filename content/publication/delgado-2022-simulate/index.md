@@ -23,4 +23,5 @@ doi: 10.1103/PhysRevA.106.032428
 links:
 - name: URL
   url: https://link.aps.org/doi/10.1103/PhysRevA.106.032428
+url_pdf: 'https://link.aps.org/doi/10.1103/PhysRevA.106.032428'
 ---

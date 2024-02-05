@@ -1,6 +1,5 @@
 ---
-title: 'Your Prompt is My Command: On Assessing the Human-Centred Generality of Multimodal
-  Models'
+title: 'Your Prompt is My Command: On Assessing the Human-Centred Generality of Multimodal Models'
 authors:
 - Wout Schellaert
 - Fernando Martı́nez-Plumed
@@ -17,4 +16,5 @@ publishDate: '2024-02-04T20:39:57.279104Z'
 publication_types:
 - article-journal
 publication: '*Journal of Artificial Intelligence Research*'
+url_pdf: 'https://www.jair.org/index.php/jair/article/view/14157'
 ---

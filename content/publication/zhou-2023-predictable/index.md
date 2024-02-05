@@ -11,7 +11,11 @@ authors:
 - Alexandru Marcoci
 - Behzad Mehrbakhsh
 - Yael Moros-Daval
-- ' others'
+- Seán Ó hÉigeartaigh
+- Danaja Rutar
+- Wout Schellaert
+- Konstantinos Voudouris
+- José Hernández-Orallo
 date: '2023-01-01'
 publishDate: '2024-02-04T20:39:57.285386Z'
 publication_types:
