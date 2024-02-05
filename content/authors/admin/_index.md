@@ -58,7 +58,7 @@ skills:
         icon_pack: fas
       - name: Python
         description: ''
-        percent: 80
+        percent: 90
         icon: python
         icon_pack: fab
       - name: JAX
@@ -98,6 +98,19 @@ social:
 highlight_name: true
 ---
 
-Pablo is a quantum algorithm researcher at Xanadu.ai specializing in algorithms for the simulation of electronic Hamiltonians. He also has some expertise in using JAX to train deep learning models for modeling such systems
-and is also interested in AI Safety and Effective Altruism.
+Hello, I'm Pablo 👋!
+
+🎓 I have a short but proficient career as a Theoretical Physicist. I am currently working as Quantum algorithm scientist at the amazing Xanadu.ai, developing quantum algorithms with applications to Chemistry.
+- My Scholar profile: https://scholar.google.com/citations?user=doyD-AwAAAAJ&hl=es
+- My Github profile: https://github.com/PabloAMC
+
+🚀 My biggest achievement is the development of GradDFT ⚛️, a JAX-based library enabling the differentiable design and experimentation of exchange-correlation functionals using machine learning techniques. Check it at https://github.com/XanaduAI/GradDFT
+
+🎯 My aim is to use my career to do the most good. One area where I expect to exist significant opportunities is positively shaping the development of Artificial Intelligence 🤖 (https://80000hours.org/problem-profiles/positively-shaping-artificial-intelligence/):
+
+"Many experts believe that there is a realistic chance that humanity will develop machines more intelligent than ourselves during the 21st century. This could lead to large, rapid improvements in human welfare, but there are good reasons to think that it could also lead to disastrous outcomes. The problem of how one might design a highly intelligent machine to pursue realistic human goals safely is very poorly understood. If AI research continues to advance without enough work going into the research problem of controlling such machines, catastrophic accidents are much more likely to occur."
+
+🎉 I also enjoy forecasting and strategizing (especially about career decisions) and understanding models such as the economy. Finally, I usually think of myself as a generalist.
+
+📨 Do not doubt to reach out if I can help!
 {style="text-align: justify;"}
