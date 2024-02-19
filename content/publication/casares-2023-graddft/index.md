@@ -10,8 +10,8 @@ authors:
 date: '2023-01-01'
 publishDate: '2024-02-04T20:39:57.260902Z'
 publication_types:
-- preprint
-publication: '*arXiv preprint arXiv:2309.15127*'
+- article-journal
+publication: 'The Journal of Chemical Physics'
 featured: true
 
 summary: GradDFT is a JAX-based library enabling the differentiable design and experimentation of exchange-correlation functionals using machine learning techniques.
