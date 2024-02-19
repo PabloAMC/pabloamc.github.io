@@ -100,7 +100,7 @@ highlight_name: true
 
 Hello, I'm Pablo 👋!
 
-🎓 I have a short but proficient career as a Theoretical Physicist. I am currently working as Quantum algorithm scientist at the amazing Xanadu.ai, developing quantum algorithms with applications to Chemistry.
+🎓 I have a short but proficient career as a Theoretical Physicist. I am currently working as Quantum algorithm scientist at the amazing [Xanadu.ai](https://xanadu.ai/), developing quantum algorithms with applications to Chemistry.
 - My Scholar profile: https://scholar.google.com/citations?user=doyD-AwAAAAJ&hl=es
 - My Github profile: https://github.com/PabloAMC
 
