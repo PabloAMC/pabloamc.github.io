@@ -13,7 +13,7 @@ publication_types:
 - article-journal
 publication: '*Proceedings of the 36th AAAI Conference on Artificial Intelligence*'
 url_pdf: 'https://ojs.aaai.org/index.php/AAAI/article/view/20466'
-featured: true
+featured: false
 
 summary: This article highlights limitations in the general-purpose application of language models like GPT-3 when directly utilized by humans, emphasizing the need for a novel evaluation framework to discern between failures due to capability constraints versus misunderstandings of user intent, ultimately indicating that these models currently lack comprehensive understanding of human commands and are far from achieving widespread general-purpose utility in real-world scenarios.
 
