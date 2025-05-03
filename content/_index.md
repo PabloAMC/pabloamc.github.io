@@ -42,6 +42,17 @@ sections:
       title: Pablo Antonio Moreno Casares
       # Choose a user profile to display (a folder name within `content/authors/`)
       username: admin
+  - block: collection
+    id: featured
+    content:
+      title: Featured Publications
+      filters:
+        folders:
+          - publication
+        featured_only: true
+    design:
+      columns: '2'
+      view: card
   - block: skills
     content:
       title: Skills
@@ -112,17 +123,6 @@ sections:
       view: compact
       columns: '2'
   - block: collection
-    id: featured
-    content:
-      title: Featured Publications
-      filters:
-        folders:
-          - publication
-        featured_only: true
-    design:
-      columns: '2'
-      view: card
-  - block: collection
     content:
       title: Recent Publications
       text: |-
@@ -136,26 +136,26 @@ sections:
     design:
       columns: '2'
       view: citation
-  - block: contact
-    id: contact
-    content:
-      title: Contact
-      subtitle:
-      text: |-
-        Contact me at.
+  #- block: contact
+  #  id: contact
+  #  content:
+  #    title: Contact
+  #    subtitle:
+  #    text: |-
+  #      Contact me at.
       # Contact (add or remove contact options as necessary)
-      email: paulmorecasa@gmail.com
+  #    email: paulmorecasa@gmail.com
       # Choose a map provider in `params.yaml` to show a map from these coordinates
       # Automatically link email and phone or display as text?
-      autolink: true
+  #    autolink: true
       # Email form provider
-      form:
-        provider: netlify
-        formspree:
-          id:
-        netlify:
+  #    form:
+  #      provider: netlify
+ #       formspree:
+ #         id:
+ #       netlify:
           # Enable CAPTCHA challenge to reduce spam?
-          captcha: false
-    design:
-      columns: '2'
+  #        captcha: false
+  #  design:
+  #    columns: '2'
 ---
