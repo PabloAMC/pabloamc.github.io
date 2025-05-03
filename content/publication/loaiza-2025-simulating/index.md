@@ -13,6 +13,6 @@ authors:
 date: '2025-01-01'
 publishDate: '2025-05-03T15:02:59.862787Z'
 publication_types:
-- article-journal
+- preprint
 publication: '*arXiv preprint arXiv:2504.10602*'
 ---
