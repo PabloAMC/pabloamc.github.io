@@ -101,9 +101,9 @@ Hello, I'm Pablo 👋!
 
 🎓 I have a short but proficient career as a Theoretical Physicist. I am currently working as Quantum algorithm scientist at the amazing [Xanadu.ai](https://xanadu.ai/), developing quantum algorithms with applications to Chemistry.
 
-🚀 My coolest article is the development of [GradDFT](https://github.com/XanaduAI/GradDFT) ⚛️, a JAX-based library enabling the differentiable design and experimentation of exchange-correlation functionals using machine learning techniques.
+🚀 My coolest article is the development of [GradDFT](https://github.com/XanaduAI/GradDFT), a JAX-based library enabling the differentiable design and experimentation of exchange-correlation functionals using machine learning techniques.
 
-🎯 My aim is to use my career to do the most good. One area where I expect to exist significant opportunities is positively shaping the development of [Artificial Intelligence](https://80000hours.org/problem-profiles/positively-shaping-artificial-intelligence/) 🤖:
+🎯 My aim is to use my career to do the most good. One area where I expect to exist significant opportunities is positively shaping the development of [Artificial Intelligence](https://80000hours.org/problem-profiles/positively-shaping-artificial-intelligence/).
 
 "Many experts believe that there is a realistic chance that humanity will develop machines more intelligent than ourselves during the 21st century. This could lead to large, rapid improvements in human welfare, but there are good reasons to think that it could also lead to disastrous outcomes. The problem of how one might design a highly intelligent machine to pursue realistic human goals safely is very poorly understood. If AI research continues to advance without enough work going into the research problem of controlling such machines, catastrophic accidents are much more likely to occur."
 
