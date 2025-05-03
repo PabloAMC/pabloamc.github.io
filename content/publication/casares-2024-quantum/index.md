@@ -9,5 +9,10 @@ date: '2024-01-01'
 publishDate: '2024-04-27T18:40:20.650624Z'
 publication_types:
 - article-journal
-publication: '*arXiv preprint arXiv:2403.13889*'
+publication: '*Quantum*'
+doi: 10.22331/q-2024-12-17-1567
+links:
+- name: URL
+  url: https://doi.org/10.22331/q-2024-12-17-1567
+url_pdf: 'https://doi.org/10.22331/q-2024-12-17-1567'
 ---
