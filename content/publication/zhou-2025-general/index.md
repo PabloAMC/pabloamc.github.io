@@ -11,9 +11,24 @@ authors:
 - Yitian Huang
 - Luning Sun
 - Jonathan E Prunty
-- ' others'
+- Zongqian Li
+- Pablo Sánchez-García
+- Kexin Jiang Chen
+- Pablo Antonio Moreno Casares
+- Jiyun Zu
+- John Burden
+- Behzad Mehrbakhsh
+- David Stillwell
+- Manuel Cebrian
+- Jindong Wang
+- Peter Henderson
+- Sherry Tongshuang Wu
+- Patrick C Kyllonen
+- Lucy Cheke
+- Xing Xie
+- José Hernández-Orallo
 date: '2025-01-01'
-publishDate: '2025-05-03T14:58:44.354493Z'
+publishDate: '2025-05-03T15:02:59.851019Z'
 publication_types:
 - article-journal
 publication: '*arXiv preprint arXiv:2503.06378*'
