@@ -5,7 +5,7 @@ authors:
 - Ignacio Loaiza
 - Stepan Fomichev
 - Danial Motlagh
-- Pablo AM Casares
+- Pablo Antonio Moreno Casares
 - Daniel Honciuc Menendez
 - Serene Shum
 - Alain Delgado
