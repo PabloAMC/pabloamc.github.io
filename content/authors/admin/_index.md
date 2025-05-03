@@ -111,7 +111,7 @@ Hello, I'm Pablo 👋!
 
 "Many experts believe that there is a realistic chance that humanity will develop machines more intelligent than ourselves during the 21st century. This could lead to large, rapid improvements in human welfare, but there are good reasons to think that it could also lead to disastrous outcomes. The problem of how one might design a highly intelligent machine to pursue realistic human goals safely is very poorly understood. If AI research continues to advance without enough work going into the research problem of controlling such machines, catastrophic accidents are much more likely to occur."
 
-🎉 I also enjoy forecasting and strategizing (especially about career decisions) and understanding models such as the economy. Finally, I usually think of myself as a generalist.
+🎉 I also enjoy the fields of economy and forecasting and strategizing.
 
 📨 Do not doubt to reach out if I can help!
 {style="text-align: justify;"}
