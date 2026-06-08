@@ -96,6 +96,18 @@ sections:
     design:
       columns: '2'
   - block: collection
+    id: projects
+    content:
+      title: Projects
+      text: ''
+      filters:
+        folders:
+          - project
+        featured_only: true
+    design:
+      columns: '2'
+      view: card
+  - block: collection
     id: posts
     content:
       title: Recent Posts
