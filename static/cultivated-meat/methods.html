@@ -42,6 +42,42 @@ datasheet), and the cost equation exists once (<code>uncertainty.R_from_inputs</
 <li><strong>Every number is sourced in <code>inputs.py</code></strong> with a provenance tag and (where uncertain) a
    Monte-Carlo prior, so the point estimate and the uncertainty band can never drift apart.</li>
 </ol>
+<h2 id="keeping-code-js-and-prose-in-sync-the-anti-drift-checklist">Keeping code, JS, and prose in sync — the anti-drift checklist</h2>
+<p>The model exists in three coupled forms — the Python source of truth, the hand-ported JS in
+<code>interactive.html</code>, and the methodology <em>prose</em> (equations + quoted numbers). Divergence between them
+is the model's biggest maintenance risk. Three layers, three guards; the first two are automated, the
+third is a discipline because no test can verify that English correctly describes an equation.</p>
+<p><strong>Layer 1 — Python ↔ JS code.</strong> <em>Fully automated.</em> <code>tests/run_parity.py</code> runs the embedded JS under
+Node and asserts it matches the Python model to ~1e-12 over a 2000-point grid (price × both acceptance
+dials × elasticity × income), plus the calibration solve, the milk check, and the timing rung. <strong>Rule:
+after ANY change to a Python model function, re-run <code>build_interactive.py</code> (which re-ports the JS) and
+<code>run_tests.sh</code> before committing.</strong> Never hand-edit the JS in <code>interactive.html</code> — it is generated.</p>
+<p><strong>Layer 2 — code ↔ numbers quoted in prose.</strong> <em>Automated, two mechanisms.</em> (a) Every illustrative
+<strong>share %</strong> in the prose/tooltips is a <code>{{TOKEN}}</code> computed in <code>build_interactive.illustrative_numbers()</code>
+and substituted at build time — never hand-typed; <code>check_illustrative_numbers_in_html</code> enforces that
+every token is computed and every computed value is used. (b) Every model-<strong>derived non-share figure</strong>
+(an elasticity, the cost floor, <code>eps_own×κ</code>) is pinned in <code>tests/test_golden.check_derived_prose_numbers</code>,
+which re-derives it from the live model and asserts the rounded figure appears in the page. <strong>Rule: when
+you quote a new model-derived number in the prose, either route it through a <code>{{TOKEN}}</code> (if it is a
+share %) or add it to <code>check_derived_prose_numbers</code> (otherwise). Do not hand-type a derived number with
+no guard</strong> — that is exactly how the stale <code>−0.95</code> elasticity slipped in. <em>External-data</em> constants (the
+Lusk <code>[−3.4,−0.84]</code> bracket, the <code>+0.2/−0.4/−1.5</code> tier offsets, DOIs) are sourced, not derived, so they
+are guarded by review, not by these tests — keep them out of the derived-number guard.</p>
+<p><strong>Layer 3 — code ↔ equations/words in prose.</strong> <em>Manual — no test can check prose English.</em> When you
+change a model <strong>equation or its structure</strong>, walk this list:
+- <strong>Single-source every constant.</strong> A number must live once, in <code>inputs.py</code> (or as a derived quantity).
+  If you find yourself typing a value into prose, ask whether it should be a <code>{{TOKEN}}</code> or a guarded
+  derived number instead.
+- <strong>If you change a slope, coefficient, or sign</strong>, grep the methodology block in <code>build_interactive.py</code>
+  (<code>&lt;details class="methods"&gt;</code>) for every place that <em>describes</em> it, not just the equation that defines
+  it. The stale <code>λ/2.25</code> kink lived in §5 prose long after the λ default changed in §2.
+- <strong>If you add or remove a term/equation in the code</strong>, add or remove it in the methodology section
+  too (the cost floor and value-weight roll-up were in the code but missing from the prose).
+- <strong>Keep the four files aligned</strong>: <code>inputs.py</code> (datasheet), <code>build_interactive.py</code> (prose + JS),
+  <code>METHODS.md</code> and <code>RESULTS.md</code> (write-ups). A figure quoted in more than one of these is a drift
+  candidate — prefer pointing to the single source over re-quoting.
+- <strong>Always finish with <code>./run_tests.sh</code></strong>, which rebuilds the page and runs all four checks. Green means
+  Layers 1–2 hold; Layer 3 is on you to have walked.</p>
 <h2 id="sourcing-discipline-pasitka-anchored">Sourcing discipline (Pasitka-anchored)</h2>
 <p>The cost stack is anchored to <strong>Pasitka et al. 2024</strong> (<em>Nature Food</em>) — the one <em>empirical</em> TEA —
 throughout. The <strong>scale-up risk is expressed inside Pasitka's own three reactor configurations</strong>
