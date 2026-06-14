@@ -10,7 +10,7 @@ date: "2026-06-14T00:00:00Z"
 featured: true
 
 # Optional external URL for project (replaces project detail page).
-external_link: "https://pabloamc.github.io/Cultivated_meat/model/interactive.html"
+external_link: "https://pabloamc.github.io/Cultivated_meat/interactive.html"
 
 image:
   caption: "Market share vs price ratio for four competing products"
