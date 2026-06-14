@@ -13,7 +13,7 @@ featured: true
 external_link: "https://pabloamc.github.io/Cultivated_meat/interactive.html"
 
 image:
-  caption: "Market share vs price ratio for four competing products"
+  caption: "Cultivated penetration by type of meat — global, at the cost floor"
   focal_point: Smart
 
 links:
