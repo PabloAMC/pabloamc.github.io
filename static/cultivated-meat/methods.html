@@ -106,7 +106,7 @@ independently verified.</p>
    self-check [6]); the acceptance dials <code>accept_x</code>/<code>theta_free_M</code> (Gate 2, always a band);
    <code>markup_add</code> (swept 2–7, bounded by the USDA farm-to-retail spread).</li>
 <li><strong>Assumed but shown not to matter</strong> — verified non-load-bearing: re-solving the calibration while
-   sweeping <code>q_taste</code>, <code>taste_quality_w</code>, <code>w_slaughter_E</code>, <code>w_realtissue_E</code>, <code>wf_mainstream_target</code> moves
+   sweeping <code>w_taste</code>, <code>taste_quality_w</code>, <code>w_slaughter_E</code>, <code>w_realtissue_E</code>, <code>wf_mainstream_target</code> moves
    the cultivated answer <strong>&lt; 0.2 pp</strong> (the calibration solve absorbs them; PB stays pinned at 1.2%). The
    timing-only knobs (<code>accept_rate</code>, <code>neophobia_launch</code>) set <em>when</em>, not the ceiling. <code>glucose_other_floor</code> (~$1 of
    the ~$7.5 floor) is the one remaining small pure assumption, and it lives inside the floor <em>band</em>.</li>
@@ -296,7 +296,7 @@ and ethical <code>E</code> (weights slaughter_free and health, ~5% = Gallup veg+
 multinomial logit:</p>
 <pre><code>V_sj = V_price(price_j, income)                                             # income-scaled price term
        + f·[ −λ·max(0, price_ratio_j − 1) + 1·max(0, 1 − price_ratio_j) ]   # reference term (λ=1 ⇒ symmetric)
-       + q_taste·taste_j + w_slaughter[s]·slaughter_j
+       + w_taste·taste_j + w_slaughter[s]·slaughter_j
        + w_realtissue[s]·real_tissue_j + w_health[s]·health_j + ξ_j[s]
 P_sj = softmax_j(V_sj)
 share_j = w_eth·P_E(j) + (1 − w_eth)·P_M(j)
@@ -311,6 +311,19 @@ share_j = w_eth·P_E(j) + (1 − w_eth)·P_M(j)
 <p>This structure makes <strong>plant-based a genuine competing
 product</strong> (its own price premium, taste, slaughter-free position) and <strong>ethical demand a distinct
 high-WTP segment</strong> that can adopt above parity (<code>R&gt;1</code>), as the user requested.</p>
+<p><strong>Every attribute has a weight, and all of them are now adjustable (interactive).</strong> The linear
+attribute weights are a <code>w</code>-family — taste <code>w_taste</code> (<code>wᵗ</code>), real-tissue <code>w_realtissue</code>, health
+<code>w_health</code>, slaughter-free <code>w_slaughter</code> — and <strong>price has a weight too: the coefficient β</strong> (utils
+per $/kg, entering through the BLP term). β is <em>derived</em>, not free: it is solved to reproduce the
+measured own-price elasticity <code>eps_own·cult_sub_mult</code> (see <em>β-derivation</em>), so you move it via <code>ε</code>,
+<code>κ</code>, <code>λ</code> (whose sliders display the resulting β). The <code>w</code>-family are exposed as <strong>expert sliders</strong>:
+the three <em>solved</em> weights (<code>w_realtissue_M</code>, <code>w_health_M</code>, <code>w_health_E</code>) default to AUTO (shown live,
+re-solved) with an <strong>override</strong> that pins them and flags the broken calibration moment; the <em>anchored</em>
+ones (<code>w_taste</code>, the scale anchor; <code>w_slaughter_E</code>) re-solve the others around any change. Because a
+logit identifies only utility <em>differences</em>, each weight is also shown <strong>relative to taste</strong> (<code>wᵗ</code> =
+the scale); the interactive's <strong>importance-breakdown panel</strong> decomposes cultivated's utility <em>vs
+conventional</em> into each factor's utils contribution (<code>market_share.utility_breakdown</code>), which sum to
+the net gap that sets the share — the relative-importance view.</p>
 <p><strong>Why a FLAT logit reproduces "cultivated cannibalises CONVENTIONAL, not the veggie burger" without a
 nest (the IIA fix).</strong> A single logit obeys IIA (a new option steals proportionally). We do not add a
 nest. Instead the result emerges from <strong>preference heterogeneity + the shared <code>real_tissue</code>
@@ -484,7 +497,7 @@ parity cultivated draws <strong>−40 pp from conventional</strong> vs −0.5 pp
 the <strong>ethical segment adopts cultivated at parity (~16%) but falls off sharply with any premium</strong> (~8% at R=1.6) — a <em>finding</em>:
 the cheap whole-food option that keeps ethical PB low also means ethical consumers won't pay a big
 cultivated premium (beans out-compete it); [4] a cross-category <strong>PB-milk validation</strong> — holding the
-<em>same</em> shared coefficients (<code>q_taste</code>, β, income) and swapping only the product positions to
+<em>same</em> shared coefficients (<code>w_taste</code>, β, income) and swapping only the product positions to
 milk-appropriate values yields ~15% (observed ~15%); [5] general-population plant-based-at-parity ≈ 8% — a
 structural prediction (we pin to the GFI buyer split, <strong>not</strong> to the UCLA ~26% dining-hall figure, whose sample
 likely over-weights ethical/PB-friendly diners); [6] <strong>demand-calibration robustness</strong> — re-solving the
@@ -541,26 +554,32 @@ attributes the spread to each input (reused by the sensitivity rung). The cost p
 on Pasitka's measured values</strong> (medium $0.63/L, cells eff=1.0), so improvements are the optimistic
 tail, never assumed. Pin any input on the CLI (<code>--fix media_price=0.2</code>) to ask "if this definitely
 lands, what then?".</p>
-<p>Result (commodity): <strong>R P50 = 1.93, 80% CI [1.54, 2.35], 0% at/below parity</strong> — consistent with
-Pasitka's own published projections (R ≈ 2.25–2.42). The realised spread is driven by <strong>overhead /
-scale-up (~13%)</strong> and <strong><code>p_conv</code> (~10%)</strong>. The long-run share it implies: <strong>P50 ≈ 11.6%, 80% CI
-[4.1, 25.7]</strong>.</p>
+<p>Result (commodity): <strong>R P50 = 2.09, 80% CI [1.63, 2.63], 0% at/below parity</strong> — consistent with
+Pasitka's own published projections (R ≈ 2.25–2.42). The realised band-width is driven most by
+<strong>medium price (~19%)</strong> — its prior is two-sided, so medium can be dearer than the demonstrated
+$0.63/L, not only cheaper — then <strong>scale-up / overhead (~8%)</strong> and <strong><code>p_conv</code> (~7%)</strong>. The long-run
+share it implies: <strong>P50 ≈ 7.3%, 80% CI [1.9, 21.9]</strong>.</p>
 <h2 id="rung-s-sensitivity-levers-bottlenecks-sensitivitypy">Rung S — sensitivity: levers &amp; bottlenecks (<code>sensitivity.py</code>)</h2>
 <p>The headline output for a technical reader. Two complementary views that can <em>legitimately differ</em>:</p>
 <ul>
 <li><strong>One-at-a-time (OAT) tornado</strong> (the lead): sweep each input lo→hi with all others at mode; rank
   by how far the output moves. This is the <strong>potential</strong> swing of each lever.</li>
-<li><strong>Variance share</strong> (the cross-check): reused <em>verbatim</em> from <code>uncertainty.spread_contribution</code>, so
-  the number matches the Monte Carlo exactly. This is the <strong>realised</strong> contribution to the band.</li>
+<li><strong>Pin-to-mode band-width</strong> (the cross-check): reused <em>verbatim</em> from <code>uncertainty.spread_contribution</code>,
+  so the number matches the Monte Carlo exactly. This is how much each input owns of the realised
+  band's <em>width</em>. <strong>It is NOT a variance decomposition</strong> — the column does not sum to 100%, and it
+  under-credits any input whose prior mode sits at a range <em>edge</em>.</li>
 </ul>
-<p>With the measured-centered priors the two views diverge in an informative way: medium price and cell
-efficiency have <em>large potential swings</em> (big OAT bars) but <em>small realised contributions</em> (~0% of
-the band), because they are centered on the measured value — they are upside, not expected movement.
-Reactor scale-up and <code>p_conv</code> lead the <em>realised</em> spread. So the OAT answers "how much could this
-lever move things"; the variance answers "how much does it move the expected band". Both are shown.</p>
-<p>Figures: <code>sensitivity_tornado_R</code> (cost levers on R; scale-up leads the realised spread),
+<p>The two views diverge in an informative way. <strong>Medium price leads both</strong> the potential swing and the
+realised band-width, because its prior is two-sided (medium can be dearer than the demonstrated
+$0.63/L, not only cheaper). <strong>Cell efficiency</strong> is the genuine "potential, not realised" case — a
+large OAT swing but ~0% band-width, because it is centered at its measured value (1.0), the
+pessimistic edge of its range, so it is pure upside. Reactor scale-up's band-width (~8%) understates
+it: its worst case (the small-vessel stall) is deliberately held out of the central band, so it
+dominates the <em>downside</em> rather than the central width. So OAT answers "how far could this lever move
+things"; band-width answers "how much of the band's spread does it own, given where we centred it".</p>
+<p>Figures: <code>sensitivity_tornado_R</code> (cost levers on R; medium price leads both columns),
 <code>sensitivity_tornado_share</code> (cost levers via R + demand dials; at the baseline R≈2.4 the cost levers
-(efficiency, medium price) and <code>eps_own</code> lead share, the acceptance dials lead it <em>at parity</em>). See RESULTS §1, §3.</p>
+(medium price, efficiency, <code>p_conv</code>) lead share, the acceptance dials lead it <em>at parity</em>). See RESULTS §1, §3.</p>
 <h2 id="rung-6-scaffolding-scaffoldingpy-most-speculative">Rung 6 — scaffolding (<code>scaffolding.py</code>, most speculative)</h2>
 <p>Structured (cut/fillet) products vs a <strong>premium</strong> target:</p>
 <pre><code>structured_cost = biomass_cost + scaffold_frac × material_price + process_cost
@@ -584,7 +603,8 @@ price-sensitivity compound. See RESULTS §4–5.</p>
 <h2 id="cruxes">Cruxes</h2>
 <ul>
 <li><strong>Gate 1 (cost, dominates):</strong> does cost reach parity? Most likely <em>no</em> for the basic product
-  (R P50 ≈ 2.0), and the binding lever within Gate 1 is <strong>scale-up</strong> (overhead, ~half the spread).</li>
+  (R P50 ≈ 2.1). The two unsettled levers within Gate 1 are <strong>medium-at-scale</strong> (the top band driver,
+  now two-sided) and <strong>reactor scale-up</strong> (the least-demonstrated step and the largest downside).</li>
 <li><strong>Gate 2 (demand, at parity):</strong> the acceptance dials (<code>accept_x</code>, <code>theta_free_M</code>) — cultivated's
   standing vs conventional — span ~11% (friction) to ~74% (preferred)
   at parity. No baked-in stance; the reader sets them.</li>
