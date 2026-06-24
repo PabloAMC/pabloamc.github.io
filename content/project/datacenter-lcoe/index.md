@@ -10,7 +10,7 @@ date: "2026-06-08T00:00:00Z"
 featured: true
 
 # Optional external URL for project (replaces project detail page).
-external_link: "https://pabloamc.github.io/Green_datacenteres/"
+external_link: "https://pabloamc.github.io/Green_datacenters/"
 
 image:
   caption: "Cheapest 24/7 carbon-free power for an EU datacenter, by location"
@@ -20,8 +20,8 @@ links:
   - icon: github
     icon_pack: fab
     name: Code & methodology
-    url: "https://github.com/PabloAMC/Green_datacenteres"
-url_code: "https://github.com/PabloAMC/Green_datacenteres"
+    url: "https://github.com/PabloAMC/Green_datacenters"
+url_code: "https://github.com/PabloAMC/Green_datacenters"
 ---
 
 An open, fully-reproducible model that works out the least-cost way to power a firm
