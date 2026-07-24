@@ -464,14 +464,14 @@
 
   /* ---------- Artful background ---------- */
   .bg{position:fixed;inset:0;z-index:-2;overflow:hidden;pointer-events:none;}
-  .wash{position:absolute;border-radius:50%;filter:blur(64px);opacity:.6;mix-blend-mode:multiply;}
-  .w1{width:54vw;height:54vw;top:-16vw;right:-6vw;background:radial-gradient(circle at 40% 40%,rgba(43,76,126,.92),rgba(43,76,126,0) 68%);}
-  .w2{width:46vw;height:46vw;top:-10vw;right:12vw;background:radial-gradient(circle at 50% 50%,rgba(58,136,140,.85),rgba(58,136,140,0) 66%);}
-  .w3{width:42vw;height:42vw;top:-10vw;left:-10vw;background:radial-gradient(circle at 50% 50%,rgba(210,145,58,.85),rgba(210,145,58,0) 66%);}
-  .w4{width:30vw;height:30vw;top:2vw;right:24vw;background:radial-gradient(circle at 50% 50%,rgba(176,68,44,.72),rgba(176,68,44,0) 64%);}
-  .w5{width:36vw;height:36vw;top:8vw;left:16vw;background:radial-gradient(circle at 50% 50%,rgba(58,136,140,.5),rgba(58,136,140,0) 66%);}
-  .w6{width:26vw;height:26vw;top:-2vw;left:34vw;background:radial-gradient(circle at 50% 50%,rgba(210,145,58,.5),rgba(210,145,58,0) 64%);}
-  .bg-fade{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(245,241,232,0) 0%,rgba(245,241,232,.35) 32%,var(--paper) 60%);}
+  .wash{position:absolute;border-radius:50%;filter:blur(66px);opacity:.5;mix-blend-mode:multiply;}
+  .w1{width:48vw;height:48vw;top:-18vw;right:-20vw;background:radial-gradient(circle at 45% 45%,rgba(43,76,126,.95),rgba(43,76,126,0) 66%);}
+  .w2{width:40vw;height:40vw;top:-15vw;right:-4vw;background:radial-gradient(circle at 50% 45%,rgba(58,136,140,.85),rgba(58,136,140,0) 64%);}
+  .w3{width:36vw;height:36vw;top:-17vw;left:-17vw;background:radial-gradient(circle at 50% 50%,rgba(210,145,58,.85),rgba(210,145,58,0) 64%);}
+  .w4{width:24vw;height:24vw;top:-9vw;right:7vw;background:radial-gradient(circle at 50% 50%,rgba(176,68,44,.68),rgba(176,68,44,0) 62%);}
+  .w5{width:28vw;height:28vw;top:-8vw;left:6vw;background:radial-gradient(circle at 50% 50%,rgba(58,136,140,.42),rgba(58,136,140,0) 64%);}
+  .w6{width:22vw;height:22vw;top:-13vw;left:34vw;background:radial-gradient(circle at 50% 50%,rgba(210,145,58,.42),rgba(210,145,58,0) 62%);}
+  .bg-fade{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(245,241,232,0) 0%,rgba(245,241,232,.5) 20%,var(--paper) 42%);}
   .grain{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.05;
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
   #net{position:absolute;inset:0;width:100%;height:100%;}
@@ -603,7 +603,6 @@
     <a href="#pubs">Research</a>
     <a href="#projects">Projects</a>
     <a href="#writing">Writing</a>
-    <a href="#contact">Contact</a>
   </span>
 </div></nav>
 
@@ -674,11 +673,6 @@
     <p class="alllink"><a class="inline" href="https://forum.effectivealtruism.org/users/pabloamc">All posts on the EA Forum →</a></p>
   </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p class="contact-cta">I'm always glad to hear from researchers, collaborators, and recruiters working on AI evaluation, AI safety, or quantum computing. The best way to reach me is by email — <a class="inline" id="email-inline" href="#">email me directly</a> — or on any of the platforms below. Based in Brussels.</p>
-    <div class="social" id="social-contact"></div>
-  </section>
 
 </main>
 
@@ -687,7 +681,6 @@
   © 2026 Pablo A. Moreno Casares · Brussels.
 </div></footer>
 
-<div class="note">Prototype for Pablo — publications load live from <code>publications.bib</code> (replace it with a Scholar BibTeX export to update); Writing reads from your EA Forum; fonts render in Computer Modern in your browser. This dev note is removed on deploy.</div>
 
 <script type="application/x-bibtex" id="bib">
 %% Curated from Pablo's Google Scholar BibTeX export. Replace with a fresh Scholar export to update.
@@ -959,9 +952,7 @@ const SOCIAL=[
 ];
 function renderSocial(id){document.getElementById(id).innerHTML=SOCIAL.map(s=>
   '<a href="'+s[2]+'" title="'+s[1]+'" aria-label="'+s[1]+'" target="_blank" rel="noopener">'+ICONS[s[0]]+'</a>').join('');}
-renderSocial('social-top');renderSocial('social-contact');
-// fill the in-text email link at runtime (kept out of the raw HTML to reduce spam)
-(function(){var a=document.getElementById('email-inline');if(a){a.href=EMAIL;a.textContent=_eu+'@'+_ed;}})();
+renderSocial('social-top');
 
 /* ---------------- Writing (from EA Forum) ---------------- */
 const EAF='<svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-4 12.7c.6.4.9 1 .9 1.7V18h6.2v-1.6c0-.7.3-1.3.9-1.7A7 7 0 0 0 12 2zM9 20h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1z"/></svg>';
@@ -1075,53 +1066,29 @@ fetch('publications.bib').then(r=>{if(!r.ok)throw 0;return r.text();})
   .then(loadPubs)
   .catch(()=>{const el=document.getElementById('bib');if(el)loadPubs(el.textContent);});
 
-/* ---------------- Constellation with pointer-following lead ---------------- */
+/* ---------------- Soft pointer-following dot (over the watercolor) ---------------- */
 (function(){
   const c=document.getElementById('net');if(!c)return;
   const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const ctx=c.getContext('2d');
-  let W,H,DPR,nodes=[],lead,rafId,mx=null,my=null;
-  const COLORS=['rgba(43,76,126,','rgba(58,136,140,','rgba(176,68,44,','rgba(210,145,58,'];
-  const ZONE=()=>Math.min(H,560);
+  let W,H,DPR,lead,rafId,mx=null,my=null;
   function size(){DPR=Math.min(window.devicePixelRatio||1,2);W=c.clientWidth;H=c.clientHeight;
     c.width=W*DPR;c.height=H*DPR;ctx.setTransform(DPR,0,0,DPR,0,0);}
-  function init(){
-    size();
-    const n=Math.max(16,Math.min(42,Math.round(W*ZONE()/26000)));
-    nodes=[];
-    for(let i=0;i<n;i++){const big=Math.random()<.1;
-      nodes.push({x:Math.random()*W,y:Math.random()*ZONE(),
-        vx:(Math.random()-.5)*.13,vy:(Math.random()-.5)*.13,
-        r:big?(6+Math.random()*8):(1.1+Math.random()*1.5),big,col:COLORS[i%COLORS.length]});}
-    lead={x:W*.5,y:Math.min(H*.32,200),r:15,col:'rgba(43,76,126,'};
-    if(mx===null){mx=lead.x;my=lead.y;}
-  }
+  function init(){size();lead={x:W*.5,y:Math.min(H*.3,190),r:15,col:'rgba(43,76,126,'};
+    if(mx===null){mx=lead.x;my=lead.y;}}
   function drawGlow(x,y,r,base){const g=ctx.createRadialGradient(x,y,0,x,y,r*7);
     g.addColorStop(0,base+'0.16)');g.addColorStop(1,base+'0)');
     ctx.fillStyle=g;ctx.beginPath();ctx.arc(x,y,r*7,0,7);ctx.fill();}
-  function step(){
+  function draw(){
     ctx.clearRect(0,0,W,H);
-    for(const p of nodes){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>ZONE())p.vy*=-1;}
-    lead.x+=(mx-lead.x)*0.055;lead.y+=(my-lead.y)*0.055;
-    for(let i=0;i<nodes.length;i++)for(let j=i+1;j<nodes.length;j++){
-      const a=nodes[i],b=nodes[j],d=Math.hypot(a.x-b.x,a.y-b.y);
-      if(d<148){ctx.strokeStyle='rgba(90,80,66,'+(0.11*(1-d/148))+')';ctx.lineWidth=.7;
-        ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();}}
-    for(const p of nodes){const d=Math.hypot(lead.x-p.x,lead.y-p.y);
-      if(d<230){ctx.strokeStyle='rgba(43,76,126,'+(0.18*(1-d/230))+')';ctx.lineWidth=.8;
-        ctx.beginPath();ctx.moveTo(lead.x,lead.y);ctx.lineTo(p.x,p.y);ctx.stroke();}}
-    for(const p of nodes){
-      if(p.big){ctx.fillStyle=p.col+'0.10)';ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,7);ctx.fill();
-        ctx.strokeStyle=p.col+'0.32)';ctx.lineWidth=1;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,7);ctx.stroke();}
-      else{ctx.fillStyle=p.col+'0.5)';ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,7);ctx.fill();}}
     drawGlow(lead.x,lead.y,lead.r,lead.col);
     ctx.fillStyle=lead.col+'0.12)';ctx.beginPath();ctx.arc(lead.x,lead.y,lead.r,0,7);ctx.fill();
     ctx.strokeStyle=lead.col+'0.4)';ctx.lineWidth=1.2;ctx.beginPath();ctx.arc(lead.x,lead.y,lead.r,0,7);ctx.stroke();
-    rafId=requestAnimationFrame(step);
   }
+  function step(){lead.x+=(mx-lead.x)*0.055;lead.y+=(my-lead.y)*0.055;draw();rafId=requestAnimationFrame(step);}
   window.addEventListener('pointermove',e=>{mx=e.clientX;my=e.clientY;},{passive:true});
-  window.addEventListener('resize',()=>{cancelAnimationFrame(rafId);init();if(!reduce)step();});
-  init();if(reduce){step();cancelAnimationFrame(rafId);}else step();
+  window.addEventListener('resize',()=>{cancelAnimationFrame(rafId);init();draw();if(!reduce)step();});
+  init();if(reduce)draw();else step();
 })();
 </script>
 </body>
