@@ -688,7 +688,7 @@
   <section id="writing" class="writing">
     <h2>Writing</h2>
     <div id="writinglist"></div>
-    <p class="alllink"><a class="inline" href="https://forum.effectivealtruism.org/users/pabloamc">All posts on the EA Forum →</a></p>
+    <p class="alllink"><a class="inline" href="https://pabloamc.substack.com">All posts on Substack →</a></p>
   </section>
 
   <section id="contact">
@@ -1004,18 +1004,14 @@ renderSocial('social-top');
   });
 })();
 
-/* ---------------- Writing (from EA Forum) ---------------- */
-const EAF='<svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-4 12.7c.6.4.9 1 .9 1.7V18h6.2v-1.6c0-.7.3-1.3.9-1.7A7 7 0 0 0 12 2zM9 20h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1z"/></svg>';
+/* ---------------- Writing (from Substack) ---------------- */
 const WRITING=[
-  ['Cultivating hope: calibrating the expectations for cultivated meat to end factory farming','https://forum.effectivealtruism.org/posts/ED2ag8hYTWf4kmL3x/cultivating-hope-calibrating-the-expectations-for-cultivated'],
-  ['AGI and the structural foundations of democracy and the rule-based international order','https://forum.effectivealtruism.org/posts/NsGREdfrJbdvGKwLp/agi-and-the-structural-foundations-of-democracy-and-the-rule'],
-  ['International Programme on AI Evaluations','https://forum.effectivealtruism.org/posts/oxgZZv9YeQpEox2Km/international-programme-on-ai-evaluations'],
-  ['Why I struggle to donate to animal welfare charities','https://forum.effectivealtruism.org/posts/dWjFvaPpbz2thHQhH/why-i-struggle-to-donate-to-animal-welfare-charities'],
-  ['An appraisal of the Future of Life Institute AI existential risk program','https://forum.effectivealtruism.org/posts/44XPFrHiFwFBM2jfL/an-appraisal-of-the-future-of-life-institute-ai-existential']
+  ['Cultivating hope: calibrating the expectations for cultivated meat to end factory farming','https://pabloamc.substack.com/p/cultivating-hope'],
+  ['AGI and the structural foundations of democracy and the rule-based international order','https://pabloamc.substack.com/p/agi-and-the-structural-foundations']
 ];
 document.getElementById('writinglist').innerHTML=WRITING.map(w=>
   '<a class="row" href="'+w[1]+'" target="_blank" rel="noopener"><span class="wt">'+w[0]+
-  '</span><span class="src">'+EAF+'EA Forum</span></a>').join('');
+  '</span><span class="src">'+ICONS.substack+'Substack</span></a>').join('');
 
 /* ---------------- Publications from BibTeX ---------------- */
 // Manual overrides keep classification/highlights stable as the .bib grows.
